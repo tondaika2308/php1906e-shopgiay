@@ -17,7 +17,7 @@
         <tr>
             <td colspan="2">
                 <button type="submit" name="save">Save</button>
-                <button type="submit" name="cancel">Cancel</button>
+                <button type="reset" name="cancel">Cancel</button>
             </td>
             {{csrf_field()}}
         </tr>
