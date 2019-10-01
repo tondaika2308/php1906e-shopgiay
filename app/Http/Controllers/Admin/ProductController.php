@@ -28,14 +28,7 @@ class ProductController extends Controller
 
     public function postAddProduct(ProductRequest $request)
     {
-        $this->validate($request,[
-            "txtName"     => "unique:product,name",
-            "txtHinh"     => "required|image",
-         ],[
-            "txtName.unique"       => "Tên sản phẩm bị trùng",
-            "txtHinh.image"        => "Bạn cần chọn hình ảnh",
-            "txtHinh.required"     => "Bạn chưa chọn hình đại diện",
-        ]);
+
     	$product = new Product;
         $product->cate_id         = $request->selectParentId;
         $product->brand_id        = $request->selectBrandId;
@@ -86,9 +79,8 @@ class ProductController extends Controller
     }
     public function getListProduct()
     {
-        $products = Product::orderBy('id','DESC')->get();
-      
-        return view('admin.product.list_product',compact('products'));
+
+        return view('admin.product.list_product');
     }
 
     public function getEditProduct($id)
@@ -108,13 +100,7 @@ class ProductController extends Controller
     }
     public function postAddSize(Request $request, $id)
     {
-        $this->validate($request,[
-            "txtQuantity" => "required|numeric"
-        ],[
-            "txtQuantity.required" => "Bạn chưa nhập số lượng",
-            "txtQuantity.numeric"  => "Số lượng phải là số",
-           
-        ]);
+
         
         $sizes = ProductProperties::where('product_id',$id)->where("size_id",$request->selectSizeId)->get()->toArray();
         if(count($sizes)>0){
