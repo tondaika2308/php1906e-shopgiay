@@ -1,6 +1,7 @@
-<html>
-<body>
-<form action="" method="post">
+@extends('admin.layout.master')
+@section('content')
+
+    <form action="" method="post">
     <table>
         <tr>
             <td>Category name</td>
@@ -23,5 +24,4 @@
         </tr>
     </table>
 </form>
-</body>
-</html>
+@endsection

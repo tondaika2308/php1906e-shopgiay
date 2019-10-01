@@ -1,7 +1,7 @@
-<html>
-<body>
+@extends('admin.layout.master')
+@section('content')
 
-<form action="" method="POST">
+<form action="{{route('suadanhmuc',$item->id)}}" method="POST">
     <div class="form-group">
         <label>Danh mục cha</label>
         <select class="form-control" name="selectParentId">
@@ -23,5 +23,4 @@
     <input name="id" type="hidden" value="{{$item->id}}">
     {{csrf_field()}}
 </form>
-</body>
-</html>
+@endsection

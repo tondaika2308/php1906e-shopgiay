@@ -32,5 +32,15 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
 
         Route::get('xoa/{id}',"CategoryController@getDelCate");
     });
+
+    Route::group(['prefix'=>'san-pham'],function () {
+
+        Route::get("danh-sach",['as' => 'listsanpham', 'uses' => "ProductController@getListProduct"]);
+
+    });
 });
+
+
+
+
 
