@@ -31,7 +31,6 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
         Route::post("sua/{id}",['as'=>'suadanhmuc','uses'=>'CategoryController@postEditCate']);
 
         Route::get('xoa/{id}',"CategoryController@getDelCate");
-
     });
 });
 

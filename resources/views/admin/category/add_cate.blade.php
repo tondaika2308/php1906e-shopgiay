@@ -7,7 +7,7 @@
             <td><input type="text" name="name"></td>
         </tr>
         <tr>
-            <td>Slug name</td>
+            <td>FULL name</td>
             <td><input type="text" name="slug_name"></td>
         </tr>
         <tr>

@@ -46,10 +46,9 @@ class CategoryController extends Controller
 
     public function postEditCate($id , Request $request)
     {
-
         $cate             = Category::find($id);
         $cate->name       = $request->txtCateName;
-        $cate->full_name  = $request->txtFullName;
+        $cate->slug_name  = $request->txtFullName;
         $cate->parent_id  = $request->selectParentId;
         $cate->updated_at = new DateTime;
         $cate->save();

@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="admin/danh-muc/sua/{{$item->id}}" method="POST">
+<form action="" method="POST">
     <div class="form-group">
         <label>Danh mục cha</label>
         <select class="form-control" name="selectParentId">
@@ -15,10 +15,12 @@
     </div>
     <div class="form-group">
         <label>Tên danh mục đầy đủ</label>
-        <input class="form-control" name="txtFullName" placeholder="Nhập tên đầy đủ" value="{!! $item->full_name!!}"/>
+        <input class="form-control" name="txtFullName" placeholder="Nhập tên đầy đủ" value="{!! $item->slug_name!!}"/>
     </div>
     <button type="submit" class="btn btn-default">Lưu</button>
     <button type="reset" class="btn btn-default">Hủy</button>
+    <a href="{{route('listdanhmuc')}}">Quay lai</a>
+    <input name="id" type="hidden" value="{{$item->id}}">
     {{csrf_field()}}
 </form>
 </body>
