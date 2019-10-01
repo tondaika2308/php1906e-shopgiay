@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
+Route::get('dang-nhap',['as'=>'get.login','uses'=>'PageController@getLogin']);
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'loginAdmin'],function() {
     Route::get('/', ['as' => 'admin-index', 'uses' => 'CategoryController@getIndexAdmin']);
 
     Route::group(['prefix' => 'danh-muc'], function () {
@@ -39,6 +41,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function() {
 
     });
 });
+
+
+Route::get('admin/dang-nhap','Admin\UserController@getAdminLogin');
+
 
 
 
